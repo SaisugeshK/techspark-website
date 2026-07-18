@@ -9,58 +9,25 @@
 <script src="https://cdn.tailwindcss.com"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-<style>
-  :root{
-    --navy:#0b1730;
-    --navy2:#122148;
-    --orange:#f7791f;
-    --orange2:#ff9245;
-  }
-  *{scroll-behavior:smooth;}
-  body{font-family:'Inter',sans-serif;background:#060d1f;color:#e8ecf5;overflow-x:hidden;}
-  h1,h2,h3,h4,.font-display{font-family:'Poppins',sans-serif;}
-  .grad-text{background:linear-gradient(90deg,var(--orange),var(--orange2));-webkit-background-clip:text;background-clip:text;color:transparent;}
-  .bg-hero{
-    background:
-      radial-gradient(1100px 500px at 15% -10%, rgba(247,121,31,.18), transparent 60%),
-      radial-gradient(900px 500px at 100% 0%, rgba(18,33,72,.9), transparent 55%),
-      linear-gradient(180deg,#060d1f 0%, #0b1730 100%);
-  }
-  .card{
-    background:linear-gradient(160deg,rgba(255,255,255,.04),rgba(255,255,255,.01));
-    border:1px solid rgba(255,255,255,.08);
-    backdrop-filter:blur(6px);
-  }
-  .card:hover{border-color:rgba(247,121,31,.5);transform:translateY(-6px);box-shadow:0 20px 40px -20px rgba(247,121,31,.35);}
-  .card{transition:all .35s ease;}
-  .chip{background:rgba(247,121,31,.12);border:1px solid rgba(247,121,31,.35);}
-  .reveal{opacity:0;transform:translateY(24px);transition:all .7s cubic-bezier(.2,.8,.2,1);}
-  .reveal.show{opacity:1;transform:translateY(0);}
-  .nav-link{position:relative;}
-  .nav-link::after{content:'';position:absolute;left:0;bottom:-4px;width:0;height:2px;background:linear-gradient(90deg,var(--orange),var(--orange2));transition:width .3s ease;}
-  .nav-link:hover::after{width:100%;}
-  .btn-primary{background:linear-gradient(90deg,var(--orange),var(--orange2));box-shadow:0 10px 25px -8px rgba(247,121,31,.6);}
-  .btn-primary:hover{filter:brightness(1.08);transform:translateY(-2px);}
-  .float{animation:float 6s ease-in-out infinite;}
-  @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-16px)}}
-  .float-slow{animation:float 8s ease-in-out infinite;animation-delay:1s;}
-  .marquee-track{display:flex;width:max-content;animation:scroll-left 28s linear infinite;}
-  @keyframes scroll-left{from{transform:translateX(0)}to{transform:translateX(-50%)}}
-  .glow-orb{position:absolute;border-radius:50%;filter:blur(80px);opacity:.35;pointer-events:none;}
-  ::-webkit-scrollbar{width:10px;}
-  ::-webkit-scrollbar-track{background:#060d1f;}
-  ::-webkit-scrollbar-thumb{background:linear-gradient(var(--orange),var(--navy2));border-radius:10px;}
-  .social-ico{transition:all .3s ease;}
-  .social-ico:hover{transform:translateY(-4px) scale(1.1);}
-  .mobile-menu{transition:max-height .35s ease, opacity .3s ease;}
-</style>
+<link rel="stylesheet" href="assets/style.css">
 </head>
 <body class="bg-hero">
 
+<!-- TOP BAR -->
+<div class="bg-[#060d1f] border-b border-white/10 text-xs text-slate-300">
+  <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-2 px-5 md:px-8 py-2">
+    <div class="flex flex-wrap items-center gap-5">
+      <a href="mailto:admin@techsparksoftwaresolutions.com" class="flex items-center gap-2 hover:text-orange-400 transition">✉️ admin@techsparksoftwaresolutions.com</a>
+      <a href="tel:+917418266919" class="flex items-center gap-2 hover:text-orange-400 transition">📞 +91 74182 66919</a>
+    </div>
+    <div class="flex items-center gap-2 text-slate-400">📍 Nagapattinam, Tamil Nadu, India</div>
+  </div>
+</div>
+
 <!-- NAVBAR -->
-<header id="navbar" class="fixed top-0 left-0 w-full z-50 transition-all duration-300">
+<header id="navbar" class="sticky top-0 left-0 w-full z-50 transition-all duration-300">
   <nav class="max-w-7xl mx-auto flex items-center justify-between px-5 md:px-8 py-4">
-    <a href="#home" class="flex items-center gap-2">
+    <a href="index.html" class="flex items-center gap-2">
       <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-[#0b1730] to-[#1a2a5e] flex items-center justify-center border border-white/10">
         <span class="font-display font-extrabold text-lg"><span class="text-white">T</span><span class="grad-text">S</span></span>
       </div>
@@ -70,62 +37,68 @@
       </div>
     </a>
     <div class="hidden lg:flex items-center gap-8 text-sm font-medium text-slate-200">
-      <a href="#home" class="nav-link">Home</a>
-      <a href="#services" class="nav-link">Services</a>
-      <a href="#academic" class="nav-link">Academic</a>
-      <a href="#why" class="nav-link">Why Us</a>
-      <a href="#founders" class="nav-link">Founders</a>
-      <a href="#contact" class="nav-link">Contact</a>
+      <a href="index.html" class="nav-link active">Home</a>
+      <a href="about.html" class="nav-link">About Us</a>
+      <a href="index.html#services" class="nav-link">Services</a>
+      <a href="index.html#academic" class="nav-link">Academic</a>
+      <a href="contact.html" class="nav-link">Contact</a>
     </div>
-    <a href="#contact" class="hidden lg:inline-block btn-primary text-white text-sm font-semibold px-5 py-2.5 rounded-full">Let's Connect</a>
+    <a href="contact.html" class="hidden lg:inline-block btn-primary text-white text-sm font-semibold px-5 py-2.5 rounded-full">Let's Connect</a>
     <button id="menuBtn" class="lg:hidden text-white text-2xl">&#9776;</button>
   </nav>
   <div id="mobileMenu" class="mobile-menu lg:hidden overflow-hidden max-h-0 opacity-0 bg-[#0b1730]/95 border-t border-white/10">
     <div class="flex flex-col px-6 py-4 gap-4 text-slate-200 font-medium">
-      <a href="#home" class="mnav">Home</a>
-      <a href="#services" class="mnav">Services</a>
-      <a href="#academic" class="mnav">Academic</a>
-      <a href="#why" class="mnav">Why Us</a>
-      <a href="#founders" class="mnav">Founders</a>
-      <a href="#contact" class="mnav">Contact</a>
+      <a href="index.html" class="mnav">Home</a>
+      <a href="about.html" class="mnav">About Us</a>
+      <a href="index.html#services" class="mnav">Services</a>
+      <a href="index.html#academic" class="mnav">Academic</a>
+      <a href="contact.html" class="mnav">Contact</a>
     </div>
   </div>
 </header>
 
 <!-- HERO -->
-<section id="home" class="relative min-h-screen flex items-center pt-28 pb-16 px-5 md:px-8">
+<section id="home" class="relative flex items-center pt-14 pb-16 px-5 md:px-8">
   <div class="glow-orb w-96 h-96 bg-orange-500 top-10 -left-20"></div>
   <div class="glow-orb w-96 h-96 bg-blue-600 bottom-0 right-0"></div>
-  <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 items-center relative z-10">
-    <div class="reveal">
+  <div class="max-w-7xl mx-auto relative z-10 w-full">
+    <div class="text-center reveal max-w-3xl mx-auto mb-14">
       <span class="chip inline-block px-4 py-1.5 rounded-full text-orange-300 text-xs font-semibold tracking-wide mb-6">🚀 Transforming Ideas into Technologies</span>
       <h1 class="font-display font-extrabold text-4xl md:text-6xl leading-tight text-white mb-6">
-        Learn. Build. <span class="grad-text">Grow.</span>
+        Excellence in <span class="grad-text">Software</span> &amp; <span class="grad-text">IT Training</span>
       </h1>
-      <p class="text-slate-300 text-lg mb-8 max-w-xl">
+      <p class="text-slate-300 text-lg max-w-2xl mx-auto">
         TechSpark Software Solutions delivers industry-ready software products and hands-on IT training — turning students and businesses into innovators with real-world technology.
       </p>
-      <div class="flex flex-wrap gap-4">
-        <a href="#services" class="btn-primary text-white font-semibold px-7 py-3.5 rounded-full">Explore Services</a>
-        <a href="#contact" class="border border-white/20 hover:border-orange-400 text-white font-semibold px-7 py-3.5 rounded-full transition">Get in Touch</a>
-      </div>
-      <div class="flex gap-10 mt-12">
-        <div><div class="font-display font-extrabold text-3xl text-white">10+</div><div class="text-slate-400 text-sm">Software Services</div></div>
-        <div><div class="font-display font-extrabold text-3xl text-white">100%</div><div class="text-slate-400 text-sm">Placement Support</div></div>
-        <div><div class="font-display font-extrabold text-3xl text-white">Cloud</div><div class="text-slate-400 text-sm">AWS · Azure · GCP</div></div>
-      </div>
     </div>
-    <div class="reveal relative flex justify-center">
-      <div class="float relative w-full max-w-md aspect-square rounded-3xl card p-8 flex flex-col items-center justify-center text-center">
-        <div class="text-6xl mb-4">💻</div>
-        <h3 class="font-display font-bold text-white text-xl mb-2">Full-Stack Innovation</h3>
-        <p class="text-slate-400 text-sm">From ERP to E-Commerce — we engineer scalable solutions for real businesses.</p>
-        <div class="grid grid-cols-3 gap-3 mt-6 w-full">
-          <div class="float-slow bg-white/5 rounded-xl py-3 text-2xl">☁️</div>
-          <div class="float bg-white/5 rounded-xl py-3 text-2xl">📊</div>
-          <div class="float-slow bg-white/5 rounded-xl py-3 text-2xl">📱</div>
+
+    <div class="grid lg:grid-cols-2 gap-8">
+      <div class="hero-photo-card reveal relative rounded-3xl overflow-hidden h-80 md:h-96">
+        <div class="absolute inset-0 bg-gradient-to-br from-[#12224d] to-[#1a2a5e]"></div>
+        <div class="absolute inset-0 flex items-center justify-center text-8xl opacity-20">💻</div>
+        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+        <div class="relative h-full flex flex-col justify-end p-8">
+          <h3 class="font-display font-bold text-white text-2xl mb-3">Software Development</h3>
+          <p class="text-slate-300 text-sm mb-6 max-w-md">Custom ERP, CRM, Billing, E-Commerce and enterprise software engineered for real business growth.</p>
+          <a href="#services" class="btn-primary inline-flex items-center gap-2 w-fit text-white text-sm font-semibold px-5 py-2.5 rounded-full">Explore Services →</a>
         </div>
       </div>
+      <div class="hero-photo-card reveal relative rounded-3xl overflow-hidden h-80 md:h-96">
+        <div class="absolute inset-0 bg-gradient-to-br from-[#3a1c05] to-[#7a3d10]"></div>
+        <div class="absolute inset-0 flex items-center justify-center text-8xl opacity-20">🎓</div>
+        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+        <div class="relative h-full flex flex-col justify-end p-8">
+          <h3 class="font-display font-bold text-white text-2xl mb-3">Academic Services</h3>
+          <p class="text-slate-300 text-sm mb-6 max-w-md">Full stack, cloud & real-time project training with internships and placement assistance.</p>
+          <a href="#academic" class="btn-primary inline-flex items-center gap-2 w-fit text-white text-sm font-semibold px-5 py-2.5 rounded-full">Explore Training →</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="flex flex-wrap justify-center gap-10 mt-14">
+      <div class="text-center"><div class="font-display font-extrabold text-3xl text-white">10+</div><div class="text-slate-400 text-sm">Software Services</div></div>
+      <div class="text-center"><div class="font-display font-extrabold text-3xl text-white">100%</div><div class="text-slate-400 text-sm">Placement Support</div></div>
+      <div class="text-center"><div class="font-display font-extrabold text-3xl text-white">Cloud</div><div class="text-slate-400 text-sm">AWS · Azure · GCP</div></div>
     </div>
   </div>
 </section>
@@ -142,16 +115,14 @@
   </div>
 </div>
 
-<!-- SOFTWARE SERVICES -->
+<!-- OUR CAPABILITIES / SOFTWARE SERVICES -->
 <section id="services" class="max-w-7xl mx-auto px-5 md:px-8 py-24">
   <div class="text-center mb-16 reveal">
-    <span class="chip inline-block px-4 py-1.5 rounded-full text-orange-300 text-xs font-semibold mb-4">Software Services</span>
+    <span class="chip inline-block px-4 py-1.5 rounded-full text-orange-300 text-xs font-semibold mb-4">Our Capabilities</span>
     <h2 class="font-display font-extrabold text-3xl md:text-4xl text-white">End-to-End Software Solutions</h2>
     <p class="text-slate-400 mt-3 max-w-2xl mx-auto">Custom-built, scalable software engineered for real business impact.</p>
   </div>
-  <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-    <!-- cards injected -->
-  </div>
+  <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6" id="servicesGrid"></div>
 </section>
 
 <!-- ACADEMIC SERVICES -->
@@ -180,78 +151,12 @@
   <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6" id="whyGrid"></div>
 </section>
 
-<!-- FOUNDERS -->
-<section id="founders" class="relative px-5 md:px-8 py-24 bg-[#0b1730]/50 border-y border-white/5">
-  <div class="max-w-7xl mx-auto">
-    <div class="text-center mb-16 reveal">
-      <span class="chip inline-block px-4 py-1.5 rounded-full text-orange-300 text-xs font-semibold mb-4">Leadership</span>
-      <h2 class="font-display font-extrabold text-3xl md:text-4xl text-white">Meet Our Founders</h2>
-      <p class="text-slate-400 mt-3 max-w-2xl mx-auto">The vision and drive behind TechSpark Software Solutions.</p>
-    </div>
-    <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-      <div class="card reveal rounded-2xl p-8 text-center">
-        <div class="w-24 h-24 mx-auto rounded-full bg-gradient-to-br from-orange-500 to-orange-300 flex items-center justify-center text-3xl font-display font-extrabold text-white mb-5">RK</div>
-        <h3 class="font-display font-bold text-white text-xl">Rajesh Kumar G</h3>
-        <p class="text-orange-400 text-sm font-semibold mb-1">Co-Founder & CEO</p>
-        <p class="text-slate-400 text-xs mb-4 tracking-wide">PRODUCT &amp; TECHNOLOGY</p>
-        <a href="tel:+917418266919" class="inline-flex items-center gap-2 text-slate-200 hover:text-orange-400 transition text-sm font-medium">📞 +91 74182 66919</a>
-      </div>
-      <div class="card reveal rounded-2xl p-8 text-center">
-        <div class="w-24 h-24 mx-auto rounded-full bg-gradient-to-br from-[#1a2a5e] to-[#3a56a8] flex items-center justify-center text-3xl font-display font-extrabold text-white mb-5">KS</div>
-        <h3 class="font-display font-bold text-white text-xl">Krishnan S</h3>
-        <p class="text-orange-400 text-sm font-semibold mb-1">Co-Founder & CEO</p>
-        <p class="text-slate-400 text-xs mb-4 tracking-wide">BUSINESS &amp; OPERATIONS</p>
-        <a href="tel:+918825794066" class="inline-flex items-center gap-2 text-slate-200 hover:text-orange-400 transition text-sm font-medium">📞 +91 88257 94066</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- CONTACT -->
-<section id="contact" class="max-w-7xl mx-auto px-5 md:px-8 py-24">
-  <div class="grid lg:grid-cols-2 gap-10 card rounded-3xl p-8 md:p-12 reveal">
-    <div>
-      <span class="chip inline-block px-4 py-1.5 rounded-full text-orange-300 text-xs font-semibold mb-4">Let's Connect!</span>
-      <h2 class="font-display font-extrabold text-3xl md:text-4xl text-white mb-4">Get In Touch</h2>
-      <p class="text-slate-400 mb-8">Have a project in mind or want to join our training programs? Reach out — we'd love to hear from you.</p>
-      <div class="space-y-5">
-        <div class="flex items-start gap-4">
-          <div class="w-11 h-11 rounded-xl bg-orange-500/15 flex items-center justify-center text-xl shrink-0">📍</div>
-          <div><div class="text-white font-semibold">Address</div><div class="text-slate-400 text-sm">No:14, 1st Floor, Pillayar Kovil Street,<br>Kadambadi, Nagapattinam – 611001.</div></div>
-        </div>
-        <div class="flex items-start gap-4">
-          <div class="w-11 h-11 rounded-xl bg-orange-500/15 flex items-center justify-center text-xl shrink-0">✉️</div>
-          <div><div class="text-white font-semibold">Email</div><a href="mailto:admin@techsparksoftwaresolutions.com" class="text-slate-400 text-sm hover:text-orange-400 transition">admin@techsparksoftwaresolutions.com</a></div>
-        </div>
-        <div class="flex items-start gap-4">
-          <div class="w-11 h-11 rounded-xl bg-orange-500/15 flex items-center justify-center text-xl shrink-0">🌐</div>
-          <div><div class="text-white font-semibold">Website</div><a href="https://www.techsparksoftwaresolutions.com" target="_blank" class="text-slate-400 text-sm hover:text-orange-400 transition">www.techsparksoftwaresolutions.com</a></div>
-        </div>
-        <div class="flex items-start gap-4">
-          <div class="w-11 h-11 rounded-xl bg-orange-500/15 flex items-center justify-center text-xl shrink-0">📞</div>
-          <div>
-            <div class="text-white font-semibold">Phone</div>
-            <a href="tel:+917418266919" class="block text-slate-400 text-sm hover:text-orange-400 transition">Rajesh Kumar G: +91 74182 66919</a>
-            <a href="tel:+918825794066" class="block text-slate-400 text-sm hover:text-orange-400 transition">Krishnan S: +91 88257 94066</a>
-          </div>
-        </div>
-      </div>
-    </div>
-    <form class="space-y-4" onsubmit="event.preventDefault(); alert('Thanks! We will get back to you soon.'); this.reset();">
-      <div class="grid sm:grid-cols-2 gap-4">
-        <input required type="text" placeholder="Your Name" class="w-full bg-white/5 border border-white/10 focus:border-orange-400 outline-none rounded-xl px-4 py-3 text-white placeholder-slate-500 transition">
-        <input required type="tel" placeholder="Phone Number" class="w-full bg-white/5 border border-white/10 focus:border-orange-400 outline-none rounded-xl px-4 py-3 text-white placeholder-slate-500 transition">
-      </div>
-      <input required type="email" placeholder="Email Address" class="w-full bg-white/5 border border-white/10 focus:border-orange-400 outline-none rounded-xl px-4 py-3 text-white placeholder-slate-500 transition">
-      <select class="w-full bg-white/5 border border-white/10 focus:border-orange-400 outline-none rounded-xl px-4 py-3 text-white transition">
-        <option class="bg-[#0b1730]">Interested In: Software Development</option>
-        <option class="bg-[#0b1730]">ERP / CRM Solutions</option>
-        <option class="bg-[#0b1730]">Academic / IT Training</option>
-        <option class="bg-[#0b1730]">Other</option>
-      </select>
-      <textarea required rows="4" placeholder="Your Message" class="w-full bg-white/5 border border-white/10 focus:border-orange-400 outline-none rounded-xl px-4 py-3 text-white placeholder-slate-500 transition"></textarea>
-      <button class="btn-primary w-full text-white font-semibold py-3.5 rounded-xl">Send Message</button>
-    </form>
+<!-- CTA -->
+<section class="max-w-7xl mx-auto px-5 md:px-8 pb-24">
+  <div class="card reveal rounded-3xl p-10 md:p-14 text-center">
+    <h2 class="font-display font-extrabold text-2xl md:text-3xl text-white mb-4">Ready to build something great?</h2>
+    <p class="text-slate-400 mb-8 max-w-xl mx-auto">Whether it's software for your business or training for your career — let's talk.</p>
+    <a href="contact.html" class="btn-primary inline-block text-white font-semibold px-8 py-3.5 rounded-full">Get In Touch</a>
   </div>
 </section>
 
@@ -284,10 +189,10 @@
     <div>
       <h4 class="font-display font-semibold text-white mb-4">Quick Links</h4>
       <div class="flex flex-col gap-2 text-slate-400 text-sm">
-        <a href="#services" class="hover:text-orange-400 transition">Software Services</a>
-        <a href="#academic" class="hover:text-orange-400 transition">Academic Services</a>
-        <a href="#why" class="hover:text-orange-400 transition">Why Choose Us</a>
-        <a href="#founders" class="hover:text-orange-400 transition">Founders</a>
+        <a href="about.html" class="hover:text-orange-400 transition">About Us</a>
+        <a href="index.html#services" class="hover:text-orange-400 transition">Software Services</a>
+        <a href="index.html#academic" class="hover:text-orange-400 transition">Academic Services</a>
+        <a href="contact.html" class="hover:text-orange-400 transition">Contact</a>
       </div>
     </div>
     <div>
@@ -311,7 +216,6 @@
 </footer>
 
 <script>
-// data
 const services = [
   ["🌐","Website Development"],["📱","Mobile App Development"],["⚙️","ERP Solutions"],["👥","CRM Solutions"],
   ["🧾","Billing Software"],["🏫","School & College ERP"],["🏥","Hospital Management System"],["🏗️","Construction Management"],
@@ -325,7 +229,7 @@ const whyus = [
   ["🏭","Industry-Oriented Training"],["🚀","Real-Time Project Exposure"],["🧑‍🏫","Expert Mentorship"],
   ["📜","Internship Certificates"],["💼","Placement Support"],["🔗","End-to-End Software Solutions"]
 ];
-const servicesGrid = document.querySelector('#services .grid');
+const servicesGrid = document.getElementById('servicesGrid');
 services.forEach(([icon,title])=>{
   servicesGrid.insertAdjacentHTML('beforeend', `
   <div class="card reveal rounded-2xl p-6 text-center">
@@ -333,7 +237,7 @@ services.forEach(([icon,title])=>{
     <h3 class="font-display font-semibold text-white text-base">${title}</h3>
   </div>`);
 });
-const academicGrid = document.querySelector('#academicGrid');
+const academicGrid = document.getElementById('academicGrid');
 academics.forEach(([icon,title])=>{
   academicGrid.insertAdjacentHTML('beforeend', `
   <div class="card reveal rounded-2xl p-6 text-center">
@@ -341,7 +245,7 @@ academics.forEach(([icon,title])=>{
     <h3 class="font-display font-semibold text-white text-base">${title}</h3>
   </div>`);
 });
-const whyGrid = document.querySelector('#whyGrid');
+const whyGrid = document.getElementById('whyGrid');
 whyus.forEach(([icon,title])=>{
   whyGrid.insertAdjacentHTML('beforeend', `
   <div class="card reveal rounded-2xl p-7 flex items-center gap-4">
@@ -349,33 +253,7 @@ whyus.forEach(([icon,title])=>{
     <h3 class="font-display font-semibold text-white text-base">${title}</h3>
   </div>`);
 });
-document.getElementById('year').textContent = new Date().getFullYear();
-
-// navbar scroll style
-const navbar = document.getElementById('navbar');
-window.addEventListener('scroll', ()=>{
-  if(window.scrollY > 40){ navbar.classList.add('bg-[#060d1f]/90','backdrop-blur-md','border-b','border-white/10','shadow-lg'); }
-  else { navbar.classList.remove('bg-[#060d1f]/90','backdrop-blur-md','border-b','border-white/10','shadow-lg'); }
-});
-
-// mobile menu
-const menuBtn = document.getElementById('menuBtn');
-const mobileMenu = document.getElementById('mobileMenu');
-menuBtn.addEventListener('click', ()=>{
-  const open = mobileMenu.style.maxHeight && mobileMenu.style.maxHeight !== '0px';
-  mobileMenu.style.maxHeight = open ? '0px' : '400px';
-  mobileMenu.style.opacity = open ? '0' : '1';
-});
-document.querySelectorAll('.mnav').forEach(a=>a.addEventListener('click',()=>{
-  mobileMenu.style.maxHeight='0px'; mobileMenu.style.opacity='0';
-}));
-
-// reveal on scroll
-const revealEls = document.querySelectorAll('.reveal');
-const io = new IntersectionObserver((entries)=>{
-  entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('show'); io.unobserve(e.target); } });
-},{threshold:0.15});
-revealEls.forEach(el=>io.observe(el));
 </script>
+<script src="assets/main.js"></script>
 </body>
 </html>
