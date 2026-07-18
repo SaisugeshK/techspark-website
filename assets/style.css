@@ -51,3 +51,7 @@ h1,h2,h3,h4,.font-display{font-family:'Poppins',sans-serif;}
 .hero-photo-card img{transition:transform .5s ease;}
 .hero-photo-card:hover img{transform:scale(1.06);}
 .section-muted{background:#eef1f7;}
+.cloud-badge{transition:all .3s cubic-bezier(.2,.8,.2,1);}
+.cloud-badge:hover{transform:translateY(-6px) scale(1.05);border-color:rgba(247,121,31,.5);box-shadow:0 16px 30px -12px rgba(15,23,42,.2);}
+.cloud-badge svg{transition:transform .3s ease;}
+.cloud-badge:hover svg{transform:rotate(-6deg) scale(1.1);}
