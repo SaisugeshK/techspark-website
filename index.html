@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TechSpark Software Solutions | Learn. Build. Grow.</title>
+<meta name="description" content="TechSpark Software Solutions — Software Development, ERP, CRM, Billing, E-Commerce & Academic IT Training in Nagapattinam.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚡</text></svg>">
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#0b1730;
+    --navy2:#122148;
+    --orange:#f7791f;
+    --orange2:#ff9245;
+  }
+  *{scroll-behavior:smooth;}
+  body{font-family:'Inter',sans-serif;background:#060d1f;color:#e8ecf5;overflow-x:hidden;}
+  h1,h2,h3,h4,.font-display{font-family:'Poppins',sans-serif;}
+  .grad-text{background:linear-gradient(90deg,var(--orange),var(--orange2));-webkit-background-clip:text;background-clip:text;color:transparent;}
+  .bg-hero{
+    background:
+      radial-gradient(1100px 500px at 15% -10%, rgba(247,121,31,.18), transparent 60%),
+      radial-gradient(900px 500px at 100% 0%, rgba(18,33,72,.9), transparent 55%),
+      linear-gradient(180deg,#060d1f 0%, #0b1730 100%);
+  }
+  .card{
+    background:linear-gradient(160deg,rgba(255,255,255,.04),rgba(255,255,255,.01));
+    border:1px solid rgba(255,255,255,.08);
+    backdrop-filter:blur(6px);
+  }
+  .card:hover{border-color:rgba(247,121,31,.5);transform:translateY(-6px);box-shadow:0 20px 40px -20px rgba(247,121,31,.35);}
+  .card{transition:all .35s ease;}
+  .chip{background:rgba(247,121,31,.12);border:1px solid rgba(247,121,31,.35);}
+  .reveal{opacity:0;transform:translateY(24px);transition:all .7s cubic-bezier(.2,.8,.2,1);}
+  .reveal.show{opacity:1;transform:translateY(0);}
+  .nav-link{position:relative;}
+  .nav-link::after{content:'';position:absolute;left:0;bottom:-4px;width:0;height:2px;background:linear-gradient(90deg,var(--orange),var(--orange2));transition:width .3s ease;}
+  .nav-link:hover::after{width:100%;}
+  .btn-primary{background:linear-gradient(90deg,var(--orange),var(--orange2));box-shadow:0 10px 25px -8px rgba(247,121,31,.6);}
+  .btn-primary:hover{filter:brightness(1.08);transform:translateY(-2px);}
+  .float{animation:float 6s ease-in-out infinite;}
+  @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-16px)}}
+  .float-slow{animation:float 8s ease-in-out infinite;animation-delay:1s;}
+  .marquee-track{display:flex;width:max-content;animation:scroll-left 28s linear infinite;}
+  @keyframes scroll-left{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+  .glow-orb{position:absolute;border-radius:50%;filter:blur(80px);opacity:.35;pointer-events:none;}
+  ::-webkit-scrollbar{width:10px;}
+  ::-webkit-scrollbar-track{background:#060d1f;}
+  ::-webkit-scrollbar-thumb{background:linear-gradient(var(--orange),var(--navy2));border-radius:10px;}
+  .social-ico{transition:all .3s ease;}
+  .social-ico:hover{transform:translateY(-4px) scale(1.1);}
+  .mobile-menu{transition:max-height .35s ease, opacity .3s ease;}
+</style>
+</head>
+<body class="bg-hero">
+
+<!-- NAVBAR -->
+<header id="navbar" class="fixed top-0 left-0 w-full z-50 transition-all duration-300">
+  <nav class="max-w-7xl mx-auto flex items-center justify-between px-5 md:px-8 py-4">
+    <a href="#home" class="flex items-center gap-2">
+      <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-[#0b1730] to-[#1a2a5e] flex items-center justify-center border border-white/10">
+        <span class="font-display font-extrabold text-lg"><span class="text-white">T</span><span class="grad-text">S</span></span>
+      </div>
+      <div class="leading-tight">
+        <div class="font-display font-bold text-white text-lg">Tech<span class="grad-text">Spark</span></div>
+        <div class="text-[9px] tracking-[0.25em] text-slate-400 -mt-1">SOFTWARE SOLUTIONS</div>
+      </div>
+    </a>
+    <div class="hidden lg:flex items-center gap-8 text-sm font-medium text-slate-200">
+      <a href="#home" class="nav-link">Home</a>
+      <a href="#services" class="nav-link">Services</a>
+      <a href="#academic" class="nav-link">Academic</a>
+      <a href="#why" class="nav-link">Why Us</a>
+      <a href="#founders" class="nav-link">Founders</a>
+      <a href="#contact" class="nav-link">Contact</a>
+    </div>
+    <a href="#contact" class="hidden lg:inline-block btn-primary text-white text-sm font-semibold px-5 py-2.5 rounded-full">Let's Connect</a>
+    <button id="menuBtn" class="lg:hidden text-white text-2xl">&#9776;</button>
+  </nav>
+  <div id="mobileMenu" class="mobile-menu lg:hidden overflow-hidden max-h-0 opacity-0 bg-[#0b1730]/95 border-t border-white/10">
+    <div class="flex flex-col px-6 py-4 gap-4 text-slate-200 font-medium">
+      <a href="#home" class="mnav">Home</a>
+      <a href="#services" class="mnav">Services</a>
+      <a href="#academic" class="mnav">Academic</a>
+      <a href="#why" class="mnav">Why Us</a>
+      <a href="#founders" class="mnav">Founders</a>
+      <a href="#contact" class="mnav">Contact</a>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section id="home" class="relative min-h-screen flex items-center pt-28 pb-16 px-5 md:px-8">
+  <div class="glow-orb w-96 h-96 bg-orange-500 top-10 -left-20"></div>
+  <div class="glow-orb w-96 h-96 bg-blue-600 bottom-0 right-0"></div>
+  <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 items-center relative z-10">
+    <div class="reveal">
+      <span class="chip inline-block px-4 py-1.5 rounded-full text-orange-300 text-xs font-semibold tracking-wide mb-6">🚀 Transforming Ideas into Technologies</span>
+      <h1 class="font-display font-extrabold text-4xl md:text-6xl leading-tight text-white mb-6">
+        Learn. Build. <span class="grad-text">Grow.</span>
+      </h1>
+      <p class="text-slate-300 text-lg mb-8 max-w-xl">
+        TechSpark Software Solutions delivers industry-ready software products and hands-on IT training — turning students and businesses into innovators with real-world technology.
+      </p>
+      <div class="flex flex-wrap gap-4">
+        <a href="#services" class="btn-primary text-white font-semibold px-7 py-3.5 rounded-full">Explore Services</a>
+        <a href="#contact" class="border border-white/20 hover:border-orange-400 text-white font-semibold px-7 py-3.5 rounded-full transition">Get in Touch</a>
+      </div>
+      <div class="flex gap-10 mt-12">
+        <div><div class="font-display font-extrabold text-3xl text-white">10+</div><div class="text-slate-400 text-sm">Software Services</div></div>
+        <div><div class="font-display font-extrabold text-3xl text-white">100%</div><div class="text-slate-400 text-sm">Placement Support</div></div>
+        <div><div class="font-display font-extrabold text-3xl text-white">Cloud</div><div class="text-slate-400 text-sm">AWS · Azure · GCP</div></div>
+      </div>
+    </div>
+    <div class="reveal relative flex justify-center">
+      <div class="float relative w-full max-w-md aspect-square rounded-3xl card p-8 flex flex-col items-center justify-center text-center">
+        <div class="text-6xl mb-4">💻</div>
+        <h3 class="font-display font-bold text-white text-xl mb-2">Full-Stack Innovation</h3>
+        <p class="text-slate-400 text-sm">From ERP to E-Commerce — we engineer scalable solutions for real businesses.</p>
+        <div class="grid grid-cols-3 gap-3 mt-6 w-full">
+          <div class="float-slow bg-white/5 rounded-xl py-3 text-2xl">☁️</div>
+          <div class="float bg-white/5 rounded-xl py-3 text-2xl">📊</div>
+          <div class="float-slow bg-white/5 rounded-xl py-3 text-2xl">📱</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="border-y border-white/10 bg-[#0b1730]/60 py-4 overflow-hidden">
+  <div class="marquee-track gap-16 text-slate-400 font-medium text-sm whitespace-nowrap">
+    <span class="flex gap-16">
+      <span>🌐 Website Development</span><span>📱 Mobile Apps</span><span>⚙️ ERP Solutions</span><span>👥 CRM Solutions</span><span>🧾 Billing Software</span><span>🏫 School & College ERP</span><span>🏥 Hospital Management</span><span>🏗️ Construction Management</span><span>🛒 E-Commerce</span><span>💼 HRMS & Payroll</span>
+    </span>
+    <span class="flex gap-16" aria-hidden="true">
+      <span>🌐 Website Development</span><span>📱 Mobile Apps</span><span>⚙️ ERP Solutions</span><span>👥 CRM Solutions</span><span>🧾 Billing Software</span><span>🏫 School & College ERP</span><span>🏥 Hospital Management</span><span>🏗️ Construction Management</span><span>🛒 E-Commerce</span><span>💼 HRMS & Payroll</span>
+    </span>
+  </div>
+</div>
+
+<!-- SOFTWARE SERVICES -->
+<section id="services" class="max-w-7xl mx-auto px-5 md:px-8 py-24">
+  <div class="text-center mb-16 reveal">
+    <span class="chip inline-block px-4 py-1.5 rounded-full text-orange-300 text-xs font-semibold mb-4">Software Services</span>
+    <h2 class="font-display font-extrabold text-3xl md:text-4xl text-white">End-to-End Software Solutions</h2>
+    <p class="text-slate-400 mt-3 max-w-2xl mx-auto">Custom-built, scalable software engineered for real business impact.</p>
+  </div>
+  <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+    <!-- cards injected -->
+  </div>
+</section>
+
+<!-- ACADEMIC SERVICES -->
+<section id="academic" class="relative px-5 md:px-8 py-24 bg-[#0b1730]/50 border-y border-white/5">
+  <div class="max-w-7xl mx-auto">
+    <div class="text-center mb-16 reveal">
+      <span class="chip inline-block px-4 py-1.5 rounded-full text-orange-300 text-xs font-semibold mb-4">Academic Services</span>
+      <h2 class="font-display font-extrabold text-3xl md:text-4xl text-white">Industry-Ready IT Training</h2>
+      <p class="text-slate-400 mt-3 max-w-2xl mx-auto">Hands-on training programs bridging the gap between classroom and career.</p>
+    </div>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6" id="academicGrid"></div>
+    <div class="flex flex-wrap justify-center gap-8 mt-14 opacity-90">
+      <div class="text-4xl font-display font-extrabold text-white">AWS</div>
+      <div class="text-4xl font-display font-extrabold text-white">Azure</div>
+      <div class="text-4xl font-display font-extrabold text-white">GCP</div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY CHOOSE US -->
+<section id="why" class="max-w-7xl mx-auto px-5 md:px-8 py-24">
+  <div class="text-center mb-16 reveal">
+    <span class="chip inline-block px-4 py-1.5 rounded-full text-orange-300 text-xs font-semibold mb-4">Why Choose TechSpark?</span>
+    <h2 class="font-display font-extrabold text-3xl md:text-4xl text-white">Built On Trust, Delivered With Excellence</h2>
+  </div>
+  <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6" id="whyGrid"></div>
+</section>
+
+<!-- FOUNDERS -->
+<section id="founders" class="relative px-5 md:px-8 py-24 bg-[#0b1730]/50 border-y border-white/5">
+  <div class="max-w-7xl mx-auto">
+    <div class="text-center mb-16 reveal">
+      <span class="chip inline-block px-4 py-1.5 rounded-full text-orange-300 text-xs font-semibold mb-4">Leadership</span>
+      <h2 class="font-display font-extrabold text-3xl md:text-4xl text-white">Meet Our Founders</h2>
+      <p class="text-slate-400 mt-3 max-w-2xl mx-auto">The vision and drive behind TechSpark Software Solutions.</p>
+    </div>
+    <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+      <div class="card reveal rounded-2xl p-8 text-center">
+        <div class="w-24 h-24 mx-auto rounded-full bg-gradient-to-br from-orange-500 to-orange-300 flex items-center justify-center text-3xl font-display font-extrabold text-white mb-5">RK</div>
+        <h3 class="font-display font-bold text-white text-xl">Rajesh Kumar G</h3>
+        <p class="text-orange-400 text-sm font-semibold mb-1">Co-Founder & CEO</p>
+        <p class="text-slate-400 text-xs mb-4 tracking-wide">PRODUCT &amp; TECHNOLOGY</p>
+        <a href="tel:+917418266919" class="inline-flex items-center gap-2 text-slate-200 hover:text-orange-400 transition text-sm font-medium">📞 +91 74182 66919</a>
+      </div>
+      <div class="card reveal rounded-2xl p-8 text-center">
+        <div class="w-24 h-24 mx-auto rounded-full bg-gradient-to-br from-[#1a2a5e] to-[#3a56a8] flex items-center justify-center text-3xl font-display font-extrabold text-white mb-5">KS</div>
+        <h3 class="font-display font-bold text-white text-xl">Krishnan S</h3>
+        <p class="text-orange-400 text-sm font-semibold mb-1">Co-Founder & CEO</p>
+        <p class="text-slate-400 text-xs mb-4 tracking-wide">BUSINESS &amp; OPERATIONS</p>
+        <a href="tel:+918825794066" class="inline-flex items-center gap-2 text-slate-200 hover:text-orange-400 transition text-sm font-medium">📞 +91 88257 94066</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="max-w-7xl mx-auto px-5 md:px-8 py-24">
+  <div class="grid lg:grid-cols-2 gap-10 card rounded-3xl p-8 md:p-12 reveal">
+    <div>
+      <span class="chip inline-block px-4 py-1.5 rounded-full text-orange-300 text-xs font-semibold mb-4">Let's Connect!</span>
+      <h2 class="font-display font-extrabold text-3xl md:text-4xl text-white mb-4">Get In Touch</h2>
+      <p class="text-slate-400 mb-8">Have a project in mind or want to join our training programs? Reach out — we'd love to hear from you.</p>
+      <div class="space-y-5">
+        <div class="flex items-start gap-4">
+          <div class="w-11 h-11 rounded-xl bg-orange-500/15 flex items-center justify-center text-xl shrink-0">📍</div>
+          <div><div class="text-white font-semibold">Address</div><div class="text-slate-400 text-sm">No:14, 1st Floor, Pillayar Kovil Street,<br>Kadambadi, Nagapattinam – 611001.</div></div>
+        </div>
+        <div class="flex items-start gap-4">
+          <div class="w-11 h-11 rounded-xl bg-orange-500/15 flex items-center justify-center text-xl shrink-0">✉️</div>
+          <div><div class="text-white font-semibold">Email</div><a href="mailto:admin@techsparksoftwaresolutions.com" class="text-slate-400 text-sm hover:text-orange-400 transition">admin@techsparksoftwaresolutions.com</a></div>
+        </div>
+        <div class="flex items-start gap-4">
+          <div class="w-11 h-11 rounded-xl bg-orange-500/15 flex items-center justify-center text-xl shrink-0">🌐</div>
+          <div><div class="text-white font-semibold">Website</div><a href="https://www.techsparksoftwaresolutions.com" target="_blank" class="text-slate-400 text-sm hover:text-orange-400 transition">www.techsparksoftwaresolutions.com</a></div>
+        </div>
+        <div class="flex items-start gap-4">
+          <div class="w-11 h-11 rounded-xl bg-orange-500/15 flex items-center justify-center text-xl shrink-0">📞</div>
+          <div>
+            <div class="text-white font-semibold">Phone</div>
+            <a href="tel:+917418266919" class="block text-slate-400 text-sm hover:text-orange-400 transition">Rajesh Kumar G: +91 74182 66919</a>
+            <a href="tel:+918825794066" class="block text-slate-400 text-sm hover:text-orange-400 transition">Krishnan S: +91 88257 94066</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <form class="space-y-4" onsubmit="event.preventDefault(); alert('Thanks! We will get back to you soon.'); this.reset();">
+      <div class="grid sm:grid-cols-2 gap-4">
+        <input required type="text" placeholder="Your Name" class="w-full bg-white/5 border border-white/10 focus:border-orange-400 outline-none rounded-xl px-4 py-3 text-white placeholder-slate-500 transition">
+        <input required type="tel" placeholder="Phone Number" class="w-full bg-white/5 border border-white/10 focus:border-orange-400 outline-none rounded-xl px-4 py-3 text-white placeholder-slate-500 transition">
+      </div>
+      <input required type="email" placeholder="Email Address" class="w-full bg-white/5 border border-white/10 focus:border-orange-400 outline-none rounded-xl px-4 py-3 text-white placeholder-slate-500 transition">
+      <select class="w-full bg-white/5 border border-white/10 focus:border-orange-400 outline-none rounded-xl px-4 py-3 text-white transition">
+        <option class="bg-[#0b1730]">Interested In: Software Development</option>
+        <option class="bg-[#0b1730]">ERP / CRM Solutions</option>
+        <option class="bg-[#0b1730]">Academic / IT Training</option>
+        <option class="bg-[#0b1730]">Other</option>
+      </select>
+      <textarea required rows="4" placeholder="Your Message" class="w-full bg-white/5 border border-white/10 focus:border-orange-400 outline-none rounded-xl px-4 py-3 text-white placeholder-slate-500 transition"></textarea>
+      <button class="btn-primary w-full text-white font-semibold py-3.5 rounded-xl">Send Message</button>
+    </form>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="border-t border-white/10 px-5 md:px-8 pt-16 pb-8">
+  <div class="max-w-7xl mx-auto grid md:grid-cols-4 gap-10 mb-12">
+    <div>
+      <div class="flex items-center gap-2 mb-4">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-[#0b1730] to-[#1a2a5e] flex items-center justify-center border border-white/10">
+          <span class="font-display font-extrabold text-lg"><span class="text-white">T</span><span class="grad-text">S</span></span>
+        </div>
+        <div class="font-display font-bold text-white text-lg">Tech<span class="grad-text">Spark</span></div>
+      </div>
+      <p class="text-slate-400 text-sm mb-5">Transforming Ideas into Technologies. Learn. Build. Grow.</p>
+      <div class="flex gap-3">
+        <a href="#" aria-label="LinkedIn" class="social-ico w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-orange-500/20 hover:border-orange-400">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" class="text-slate-300"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.04-1.85-3.04-1.86 0-2.15 1.45-2.15 2.94v5.67H9.35V9h3.41v1.56h.05c.47-.89 1.63-1.85 3.36-1.85 3.59 0 4.25 2.36 4.25 5.43v6.31zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45z"/></svg>
+        </a>
+        <a href="#" aria-label="Instagram" class="social-ico w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-orange-500/20 hover:border-orange-400">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" class="text-slate-300"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.97.24 2.43.4a4.9 4.9 0 0 1 1.77 1.15 4.9 4.9 0 0 1 1.15 1.77c.16.46.35 1.26.4 2.43.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.24 1.97-.4 2.43a4.9 4.9 0 0 1-1.15 1.77 4.9 4.9 0 0 1-1.77 1.15c-.46.16-1.26.35-2.43.4-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.97-.24-2.43-.4a4.9 4.9 0 0 1-1.77-1.15 4.9 4.9 0 0 1-1.15-1.77c-.16-.46-.35-1.26-.4-2.43C2.17 15.58 2.16 15.2 2.16 12s.01-3.58.07-4.85c.05-1.17.24-1.97.4-2.43a4.9 4.9 0 0 1 1.15-1.77A4.9 4.9 0 0 1 5.55 1.8c.46-.16 1.26-.35 2.43-.4C9.25 1.34 9.63 1.33 12 1.33m0 2.16c-3.15 0-3.5.01-4.74.07-.96.04-1.48.2-1.83.34-.46.18-.79.39-1.13.74-.35.34-.56.67-.74 1.13-.14.35-.3.87-.34 1.83-.06 1.24-.07 1.59-.07 4.74s.01 3.5.07 4.74c.04.96.2 1.48.34 1.83.18.46.39.79.74 1.13.34.35.67.56 1.13.74.35.14.87.3 1.83.34 1.24.06 1.59.07 4.74.07s3.5-.01 4.74-.07c.96-.04 1.48-.2 1.83-.34.46-.18.79-.39 1.13-.74.35-.34.56-.67.74-1.13.14-.35.3-.87.34-1.83.06-1.24.07-1.59.07-4.74s-.01-3.5-.07-4.74c-.04-.96-.2-1.48-.34-1.83a3 3 0 0 0-.74-1.13 3 3 0 0 0-1.13-.74c-.35-.14-.87-.3-1.83-.34-1.24-.06-1.59-.07-4.74-.07M12 6.87A5.13 5.13 0 1 1 12 17.13 5.13 5.13 0 0 1 12 6.87m0 2.16a2.97 2.97 0 1 0 0 5.94 2.97 2.97 0 0 0 0-5.94m5.34-2.4a1.2 1.2 0 1 1-2.4 0 1.2 1.2 0 0 1 2.4 0"/></svg>
+        </a>
+        <a href="#" aria-label="Facebook" class="social-ico w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-orange-500/20 hover:border-orange-400">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" class="text-slate-300"><path d="M13.5 21.9v-8.1h2.72l.41-3.15h-3.13V8.65c0-.91.25-1.53 1.56-1.53h1.66V4.31c-.29-.04-1.27-.12-2.42-.12-2.4 0-4.04 1.46-4.04 4.15v2.31H7.53v3.15h2.73v8.1h3.24z"/></svg>
+        </a>
+        <a href="#" aria-label="YouTube" class="social-ico w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-orange-500/20 hover:border-orange-400">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" class="text-slate-300"><path d="M23.5 6.19a3.02 3.02 0 0 0-2.12-2.14C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.38.55A3.02 3.02 0 0 0 .5 6.19 31.6 31.6 0 0 0 0 12a31.6 31.6 0 0 0 .5 5.81 3.02 3.02 0 0 0 2.12 2.14C4.5 20.5 12 20.5 12 20.5s7.5 0 9.38-.55a3.02 3.02 0 0 0 2.12-2.14A31.6 31.6 0 0 0 24 12a31.6 31.6 0 0 0-.5-5.81zM9.6 15.5v-7l6.27 3.5-6.27 3.5z"/></svg>
+        </a>
+      </div>
+    </div>
+    <div>
+      <h4 class="font-display font-semibold text-white mb-4">Quick Links</h4>
+      <div class="flex flex-col gap-2 text-slate-400 text-sm">
+        <a href="#services" class="hover:text-orange-400 transition">Software Services</a>
+        <a href="#academic" class="hover:text-orange-400 transition">Academic Services</a>
+        <a href="#why" class="hover:text-orange-400 transition">Why Choose Us</a>
+        <a href="#founders" class="hover:text-orange-400 transition">Founders</a>
+      </div>
+    </div>
+    <div>
+      <h4 class="font-display font-semibold text-white mb-4">Contact</h4>
+      <div class="flex flex-col gap-2 text-slate-400 text-sm">
+        <span>No:14, 1st Floor, Pillayar Kovil Street, Kadambadi, Nagapattinam – 611001.</span>
+        <a href="mailto:admin@techsparksoftwaresolutions.com" class="hover:text-orange-400 transition">admin@techsparksoftwaresolutions.com</a>
+      </div>
+    </div>
+    <div>
+      <h4 class="font-display font-semibold text-white mb-4">Leadership</h4>
+      <div class="flex flex-col gap-2 text-slate-400 text-sm">
+        <a href="tel:+917418266919" class="hover:text-orange-400 transition">Rajesh Kumar G: +91 74182 66919</a>
+        <a href="tel:+918825794066" class="hover:text-orange-400 transition">Krishnan S: +91 88257 94066</a>
+      </div>
+    </div>
+  </div>
+  <div class="max-w-7xl mx-auto border-t border-white/10 pt-6 text-center text-slate-500 text-xs">
+    © <span id="year"></span> TechSpark Software Solutions. All rights reserved.
+  </div>
+</footer>
+
+<script>
+// data
+const services = [
+  ["🌐","Website Development"],["📱","Mobile App Development"],["⚙️","ERP Solutions"],["👥","CRM Solutions"],
+  ["🧾","Billing Software"],["🏫","School & College ERP"],["🏥","Hospital Management System"],["🏗️","Construction Management"],
+  ["🛒","E-Commerce Solutions"],["💼","HRMS & Payroll Solutions"]
+];
+const academics = [
+  ["🎓","Professional IT Training"],["💻","Full Stack Development"],["🔧","Frontend & Backend Development"],["☁️","Cloud Technologies"],
+  ["🧪","Software Testing"],["📋","Real-Time Project Training"],["🤝","Internship Programs"],["🎯","Placement Assistance"]
+];
+const whyus = [
+  ["🏭","Industry-Oriented Training"],["🚀","Real-Time Project Exposure"],["🧑‍🏫","Expert Mentorship"],
+  ["📜","Internship Certificates"],["💼","Placement Support"],["🔗","End-to-End Software Solutions"]
+];
+const servicesGrid = document.querySelector('#services .grid');
+services.forEach(([icon,title])=>{
+  servicesGrid.insertAdjacentHTML('beforeend', `
+  <div class="card reveal rounded-2xl p-6 text-center">
+    <div class="text-4xl mb-4">${icon}</div>
+    <h3 class="font-display font-semibold text-white text-base">${title}</h3>
+  </div>`);
+});
+const academicGrid = document.querySelector('#academicGrid');
+academics.forEach(([icon,title])=>{
+  academicGrid.insertAdjacentHTML('beforeend', `
+  <div class="card reveal rounded-2xl p-6 text-center">
+    <div class="text-4xl mb-4">${icon}</div>
+    <h3 class="font-display font-semibold text-white text-base">${title}</h3>
+  </div>`);
+});
+const whyGrid = document.querySelector('#whyGrid');
+whyus.forEach(([icon,title])=>{
+  whyGrid.insertAdjacentHTML('beforeend', `
+  <div class="card reveal rounded-2xl p-7 flex items-center gap-4">
+    <div class="text-3xl">${icon}</div>
+    <h3 class="font-display font-semibold text-white text-base">${title}</h3>
+  </div>`);
+});
+document.getElementById('year').textContent = new Date().getFullYear();
+
+// navbar scroll style
+const navbar = document.getElementById('navbar');
+window.addEventListener('scroll', ()=>{
+  if(window.scrollY > 40){ navbar.classList.add('bg-[#060d1f]/90','backdrop-blur-md','border-b','border-white/10','shadow-lg'); }
+  else { navbar.classList.remove('bg-[#060d1f]/90','backdrop-blur-md','border-b','border-white/10','shadow-lg'); }
+});
+
+// mobile menu
+const menuBtn = document.getElementById('menuBtn');
+const mobileMenu = document.getElementById('mobileMenu');
+menuBtn.addEventListener('click', ()=>{
+  const open = mobileMenu.style.maxHeight && mobileMenu.style.maxHeight !== '0px';
+  mobileMenu.style.maxHeight = open ? '0px' : '400px';
+  mobileMenu.style.opacity = open ? '0' : '1';
+});
+document.querySelectorAll('.mnav').forEach(a=>a.addEventListener('click',()=>{
+  mobileMenu.style.maxHeight='0px'; mobileMenu.style.opacity='0';
+}));
+
+// reveal on scroll
+const revealEls = document.querySelectorAll('.reveal');
+const io = new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('show'); io.unobserve(e.target); } });
+},{threshold:0.15});
+revealEls.forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
